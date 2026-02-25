@@ -6,5 +6,5 @@
 
 ---
 
-## working on UC2
+## Re-working on UC2
 ### Hardcoded palindrome code
