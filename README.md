@@ -8,3 +8,6 @@
 
 ## Re-working on UC2
 ### Hardcoded palindrome code
+
+## working on UC3
+### Palindrome Check Using String Reverse

@@ -1,24 +1,18 @@
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        int number = 121;
+        String input = "madam";
 
-        if (isPalindrome(number)) {
-            System.out.println(number + " is a palindrome number.");
+        // Build reversed string
+        String reversed = "";
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
+        }
+
+        // Compare original and reversed
+        if (input.equals(reversed)) {
+            System.out.println(input + " is a palindrome.");
         } else {
-            System.out.println(number + " is not a palindrome number.");
+            System.out.println(input + " is not a palindrome.");
         }
-    }
-
-    public static boolean isPalindrome(int num) {
-        int original = num;
-        int reversed = 0;
-
-        while (num > 0) {
-            int digit = num % 10;
-            reversed = reversed * 10 + digit;
-            num /= 10;
-        }
-
-        return original == reversed;
     }
 }
