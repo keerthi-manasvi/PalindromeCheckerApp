@@ -34,3 +34,6 @@ Case-Insensitive & Space-Ignored Palindrome
 
 ## working on UC11
 Object-Oriented Palindrome Service
+
+## working on UC12
+Strategy Pattern for Palindrome Algorithms
