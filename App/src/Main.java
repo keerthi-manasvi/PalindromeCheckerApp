@@ -1,18 +1,21 @@
-// Main.java
 public class Main {
     public static void main(String[] args) {
-        PalindromeCheckerApp checker = new PalindromeCheckerApp();
+        PalindromeService service = new PalindromeService();
+        String input = "A man a plan a canal Panama";
 
-        String[] testInputs = {
-                "madam",
-                "hello",
-                "A man a plan a canal Panama",
-                "racecars"
-        };
+        // Use Array strategy
+        service.setStrategy(new ArrayPalindromeStrategy());
+        System.out.println("Array Strategy: " + input + " → " +
+                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
 
-        for (String input : testInputs) {
-            boolean result = checker.checkPalindrome(input);
-            System.out.println(input + " → " + (result ? "Palindrome" : "Not Palindrome"));
-        }
+        // Use Stack strategy
+        service.setStrategy(new StackPalindromeStrategy());
+        System.out.println("Stack Strategy: " + input + " → " +
+                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
+
+        // Use Deque strategy
+        service.setStrategy(new DequePalindromeStrategy());
+        System.out.println("Deque Strategy: " + input + " → " +
+                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
     }
 }
