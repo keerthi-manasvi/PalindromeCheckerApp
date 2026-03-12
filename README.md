@@ -37,3 +37,9 @@ Object-Oriented Palindrome Service
 
 ## working on UC12
 Strategy Pattern for Palindrome Algorithms
+
+## working on UC12
+Performance Comparison
+
+## working on UC13
+Performance Comparison

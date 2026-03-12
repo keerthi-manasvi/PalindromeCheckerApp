@@ -1,21 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        PalindromeService service = new PalindromeService();
         String input = "A man a plan a canal Panama";
 
-        // Use Array strategy
-        service.setStrategy(new ArrayPalindromeStrategy());
-        System.out.println("Array Strategy: " + input + " → " +
-                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
+        PalindromeStrategy[] strategies = {
+                new ArrayStrategy(),
+                new StackStrategy(),
+                new DequeStrategy()
+        };
 
-        // Use Stack strategy
-        service.setStrategy(new StackPalindromeStrategy());
-        System.out.println("Stack Strategy: " + input + " → " +
-                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
+        String[] names = {"ArrayStrategy", "StackStrategy", "DequeStrategy"};
 
-        // Use Deque strategy
-        service.setStrategy(new DequePalindromeStrategy());
-        System.out.println("Deque Strategy: " + input + " → " +
-                (service.executeCheck(input) ? "Palindrome" : "Not Palindrome"));
+        for (int i = 0; i < strategies.length; i++) {
+            long startTime = System.nanoTime();
+            boolean result = strategies[i].checkPalindrome(input);
+            long endTime = System.nanoTime();
+            long duration = endTime - startTime;
+
+            System.out.println(names[i] + ": " +
+                    (result ? input + " is a Palindrome" : input + " is not Palindrome") +
+                    " | Time = " + duration + " ns");
+        }
     }
 }
