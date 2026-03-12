@@ -5,25 +5,8 @@ interface PalindromeStrategy {
     boolean checkPalindrome(String str);
 }
 
-// Strategy 1: Two-pointer array approach
-class ArrayPalindromeStrategy implements PalindromeStrategy {
-    @Override
-    public boolean checkPalindrome(String str) {
-        String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        int start = 0, end = normalized.length() - 1;
-        while (start < end) {
-            if (normalized.charAt(start) != normalized.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
-        return true;
-    }
-}
-
-// Strategy 2: Stack approach
-class StackPalindromeStrategy implements PalindromeStrategy {
+// Stack-based strategy
+class StackStrategy implements PalindromeStrategy {
     @Override
     public boolean checkPalindrome(String str) {
         String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
@@ -36,8 +19,8 @@ class StackPalindromeStrategy implements PalindromeStrategy {
     }
 }
 
-// Strategy 3: Deque approach
-class DequePalindromeStrategy implements PalindromeStrategy {
+// Deque-based strategy
+class DequeStrategy implements PalindromeStrategy {
     @Override
     public boolean checkPalindrome(String str) {
         String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
@@ -50,18 +33,17 @@ class DequePalindromeStrategy implements PalindromeStrategy {
     }
 }
 
-// Context class
-class PalindromeService {
-    private PalindromeStrategy strategy;
-
-    public void setStrategy(PalindromeStrategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public boolean executeCheck(String str) {
-        if (strategy == null) {
-            throw new IllegalStateException("No strategy set!");
+// Two-pointer array strategy
+class ArrayStrategy implements PalindromeStrategy {
+    @Override
+    public boolean checkPalindrome(String str) {
+        String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        int start = 0, end = normalized.length() - 1;
+        while (start < end) {
+            if (normalized.charAt(start) != normalized.charAt(end)) return false;
+            start++;
+            end--;
         }
-        return strategy.checkPalindrome(str);
+        return true;
     }
 }
