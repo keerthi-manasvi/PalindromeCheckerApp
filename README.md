@@ -11,3 +11,9 @@
 
 ## working on UC3
 ### Palindrome Check Using String Reverse
+
+## working on UC4
+### Character Array Based Palindrome
+
+## working on UC5
+### Stack-Based Palindrome Checker
