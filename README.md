@@ -28,3 +28,6 @@ Linked List Based Palindrome Checker
 
 ## working on UC9
 Recursive Palindrome Checker
+
+## working on UC10
+Case-Insensitive & Space-Ignored Palindrome
