@@ -1,4 +1,3 @@
-// PalindromeChecker.java
 public class PalindromeCheckerApp {
     public boolean checkPalindrome(String str) {
         String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
